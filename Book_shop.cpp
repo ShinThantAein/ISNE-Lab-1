@@ -4,8 +4,8 @@
 using namespace std;
 
 //***** Function Prototype ******//
-double cm_to_inch(double value);
-double pound_to_gram(double value);
+double inch_to_cm(double value);
+double gram_to_pound(double value);
 double surface_area(double w, double h);
 double discount_for_instockday(int instock_day);
 double one_book_price();
@@ -52,13 +52,13 @@ int main() {
 }
 
 //***** Unit Convertion *****//
-double cm_to_inch(double value){
-    return value / 2.54;
+double inch_to_cm(double value){
+    return value * 2.54;
 }
 
 //***** Unit Convertion *****//
-double pound_to_gram(double value){
-    return value * 453.592;
+double gram_to_pound(double value){
+    return value / 453.592;
 }
 
 //***** Function to calculate surface area *****//
@@ -89,17 +89,17 @@ double one_book_price(){
     double w, h, weight;
     int pages, instockday;
 
-    cout << "Enter book width (cm): ";
+    cout << "Enter book width (inch): ";
     cin >> w;
-    w = cm_to_inch(w);
+    w = inch_to_cm(w);
 
-    cout << "Enter book height (cm): ";
+    cout << "Enter book height (inch): ";
     cin >> h;
-    h = cm_to_inch(h);
+    h = inch_to_cm(h);
 
-    cout << "Enter book weight (pounds): ";
+    cout << "Enter book weight (gram): ";
     cin >> weight;
-    weight = pound_to_gram(weight);
+    weight = gram_to_pound(weight);
 
     cout << "Enter number of pages: ";
     cin >> pages;
