@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cmath>
-#include <iomanip>
 using namespace std;
 
 //***** Function Prototype ******//
@@ -20,6 +19,7 @@ int main() {
 
     cout << "Book 1 : " << endl;
     double price = one_book_price();
+    cout << "Book 1 Price : " << price << endl;
     double total_price = price;
     double cheapest_price = price;
 
@@ -27,6 +27,7 @@ int main() {
     for(int i = 1; i < books; i++){
         cout << "Book " << i+1 << ":\n";
         price = one_book_price();
+        cout << "Book " << i+1 << " Price : " << price << endl;
         total_price += price;
 
         if(price < cheapest_price){
@@ -42,11 +43,12 @@ int main() {
     if(answer == 1){                     
         if(books >= 3){                    
             double discount = member_discount(cheapest_price);
+            cout << "Discout for cheapest book : " << discount << endl;
             total_price -= discount;
         }
     }
 
-    cout << setprecision(5) << "Total price = " << total_price << endl;
+    cout << "Total price = " << total_price << endl;
 
     return 0;
 }
@@ -58,7 +60,7 @@ double inch_to_cm(double value){
 
 //***** Unit Convertion *****//
 double gram_to_pound(double value){
-    return value / 453.592;
+    return value * 0.00220462;
 }
 
 //***** Function to calculate surface area *****//
